@@ -81,7 +81,7 @@ Une fois que j'avais cette fenêtre complètement fonctionnelle je suis passé e
 ### **Ajouts**
 
 
-A ce moment du développement ma première étape était terminée mais j'ai décidé d'ajouter quelques assets pour habiller l'écran et surtout tester. J'ai donc ajouté une musique qui se lance en boucle à cet écran et une animation de "light" qui apparaissent en bas de l'écran et remonte jusqu'en haut en boucle.
+A ce moment du développement ma première étape était terminée mais j'ai décidé d'ajouter quelques assets pour habiller l'écran et surtout tester. J'ai donc ajouté une musique qui se lance en boucle à cet écran et une animation de "lights" qui apparaissent en bas de l'écran et remonte jusqu'en haut en boucle, ça m'a donné une approche pour gérer les ombres en jeu.
 
 
 <br/>
@@ -90,5 +90,31 @@ A ce moment du développement ma première étape était terminée mais j'ai dé
 En conclusion, pour le peu qui est réalisé j'ai passé beaucoup beaucoup de temps mais le temps passé dessus est réutilisable pour la suite donc je ne m'inquiète pas. Et surtout je vais pouvoir passer à des choses plus intéressantes comme la création de la physique du jeu et l'affichage de la map.
 
 J'ai appris pas mal de chose dont je n'ai pas parlé plus haut comme la génération de log, la gestion d'un debugger et ajouter de la transparence à une image.
+Voici ma fonction pour ajouter de la transparence en Java si jamais ça intéresse quelqu'un car je n'ai pas trouvé la réponse directement en cherchant sur le net :
+```Java
+/**
+ * Fonction permettant d'ajouter de la transparence à une image.
+ * @param image L'image source.
+ * @param alpha La valeur alpha (transparence), entre 0 et 255 (255 étant visible et 0 invisible).
+ * @return l'image avec la transparence appliquée
+ */
+public static BufferedImage setAlpha(BufferedImage image, int alpha){ // Ma fonction est static car dans une classe d'utilitaire.
+	for (int x=0; x<image.getWidth(); x++){ // Parcours classique pixel par pixel de l'image.
+        for (int y=0; y<image.getHeight(); y++){
+            int r = (image.getRGB(x,y)>>16)&0xFF; // Les valeurs obtenues doivent être modifiées pour correspondre à ce qu'attend Color à sa construction
+            int gr = (image.getRGB(x,y)>>8)&0xFF; // C'est un changement au niveau des bits pour éviter les nombres négatifs et obtenir une valeur entre 0 et 255.
+            int b = (image.getRGB(x,y))&0xFF;
+            int a = (image.getRGB(x,y)>>24)&0xFF;
+            if(a != 0){ // Je vérifie si le pixel est déjà transparent, en testant j'ai vu qu'ajouter de la transparence à un alpha 0 donne un pixel visible.
+				java.awt.Color transparent = new java.awt.Color(r ,gr ,b, alpha); // Je crée une couleur en prenant la couleur d'origine et en y ajoutant la nouvelle transparence.
+            }else{
+            	java.awt.Color transparent = new java.awt.Color(r ,gr ,b, a); // Je garde la couleur et la transparence d'origine.
+            }
+            image.setRGB(x,y, (transparent.getRGB())); // J'applique la nouvelle couleur au pixel.
+        }
+	}
+    return image;
+}
+```
 
 ![screenshot](https://evury.github.io/lornia/Lornia-ProjetAlcyon/devblog1/img/ecrantitre.jpg)
