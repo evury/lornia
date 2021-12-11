@@ -104,8 +104,8 @@ Voici ma fonction pour ajouter de la transparence en Java si jamais ça intéres
 public static BufferedImage setAlpha(BufferedImage image, int alpha){ // Ma fonction est static car dans une classe d'utilitaire.
 
 	// Parcours classique pixel par pixel de l'image.
-	for (int x=0; x<image.getWidth(); x++){ 
-		for (int y=0; y<image.getHeight(); y++){
+	for (int x = 0; x < image.getWidth(); x++){ 
+		for (int y = 0; y < image.getHeight(); y++){
 		
 			int r = (image.getRGB(x,y)>>16)&0xFF; // Les valeurs obtenues doivent être modifiées pour correspondre à ce qu'attend Color à sa construction
 			int gr = (image.getRGB(x,y)>>8)&0xFF; // C'est un changement au niveau des bits pour éviter les nombres négatifs et obtenir une valeur entre 0 et 255.
@@ -115,14 +115,11 @@ public static BufferedImage setAlpha(BufferedImage image, int alpha){ // Ma fonc
 			// Je vérifie si le pixel est déjà transparent, en testant j'ai vu qu'ajouter de la transparence à un alpha 0 donne un pixel visible.
 			if(a != 0){ 
 				// Je crée une couleur en prenant la couleur d'origine et en y ajoutant la nouvelle transparence.
-				java.awt.Color transparent = new java.awt.Color(r ,gr ,b, alpha); 
-			}else{
-				// Je garde la couleur et la transparence d'origine.
-				java.awt.Color transparent = new java.awt.Color(r ,gr ,b, a); 
+				java.awt.Color transparent = new java.awt.Color(r ,gr ,b, alpha);
+				
+				// J'applique la nouvelle couleur au pixel.
+				image.setRGB(x,y, (transparent.getRGB()));
 			}
-			
-			// J'applique la nouvelle couleur au pixel.
-			image.setRGB(x,y, (transparent.getRGB())); 
 		}
 	}
 	return image;
