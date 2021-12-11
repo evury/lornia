@@ -26,7 +26,7 @@ Mon objectif pour la première étape était de créer un écran de titre avec l
 
 C'est très simple, j'ai choisi d'utiliser Java car c'est mon langage de prédilection et que je fais ce projet from scratch.
 
-
+<br/>
 ### **Création du serveur**
 
 Je commence par la couche la plus basse (la plus éloignée de l'utilisateur) qui est le serveur. Je n'utilise pas de serveur pré-fait afin de garder un maximum de contrôle dessus. Le serveur consiste à attendre et échanger des messages avec les clients. Le serveur est actuellement capable d'attendre les connexions client, de donner l'état du serveur (en ligne, en maintenance et hors ligne le cas échéant), de donner le nombre maximum de joueur pouvant se connecter et le nombre de joueur connecté.
