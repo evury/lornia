@@ -20,6 +20,8 @@ Bon, pour le premier il n'y aura peu voir pas d'image à montrer car c'est surto
 Mon objectif pour la première étape était de créer un écran de titre avec la possibilité d'entrer des informations afin de se connecter au serveur.
 
 
+![screenshot](https://evury.github.io/lornia/Lornia-ProjetAlcyon/devblog1/img/ecrantitre.jpg)
+
 <br/>
 ### **Choix du langage**
 
@@ -90,8 +92,9 @@ A ce moment du développement ma première étape était terminée mais j'ai dé
 En conclusion, pour le peu qui est réalisé j'ai passé beaucoup beaucoup de temps mais le temps passé dessus est réutilisable pour la suite donc je ne m'inquiète pas. Et surtout je vais pouvoir passer à des choses plus intéressantes comme la création de la physique du jeu et l'affichage de la map.
 
 J'ai appris pas mal de chose dont je n'ai pas parlé plus haut comme la génération de log, la gestion d'un debugger et ajouter de la transparence à une image.
+
 Voici ma fonction pour ajouter de la transparence en Java si jamais ça intéresse quelqu'un car je n'ai pas trouvé la réponse directement en cherchant sur le net :
-```Java
+```java
 /**
  * Fonction permettant d'ajouter de la transparence à une image.
  * @param image L'image source.
@@ -116,5 +119,3 @@ public static BufferedImage setAlpha(BufferedImage image, int alpha){ // Ma fonc
     return image;
 }
 ```
-
-![screenshot](https://evury.github.io/lornia/Lornia-ProjetAlcyon/devblog1/img/ecrantitre.jpg)
