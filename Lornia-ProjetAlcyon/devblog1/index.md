@@ -102,18 +102,27 @@ Voici ma fonction pour ajouter de la transparence en Java si jamais ça intéres
  * @return l'image avec la transparence appliquée
  */
 public static BufferedImage setAlpha(BufferedImage image, int alpha){ // Ma fonction est static car dans une classe d'utilitaire.
-	for (int x=0; x<image.getWidth(); x++){ // Parcours classique pixel par pixel de l'image.
+
+	// Parcours classique pixel par pixel de l'image.
+	for (int x=0; x<image.getWidth(); x++){ 
         for (int y=0; y<image.getHeight(); y++){
+		
             int r = (image.getRGB(x,y)>>16)&0xFF; // Les valeurs obtenues doivent être modifiées pour correspondre à ce qu'attend Color à sa construction
             int gr = (image.getRGB(x,y)>>8)&0xFF; // C'est un changement au niveau des bits pour éviter les nombres négatifs et obtenir une valeur entre 0 et 255.
             int b = (image.getRGB(x,y))&0xFF;
             int a = (image.getRGB(x,y)>>24)&0xFF;
-            if(a != 0){ // Je vérifie si le pixel est déjà transparent, en testant j'ai vu qu'ajouter de la transparence à un alpha 0 donne un pixel visible.
-				java.awt.Color transparent = new java.awt.Color(r ,gr ,b, alpha); // Je crée une couleur en prenant la couleur d'origine et en y ajoutant la nouvelle transparence.
+			
+			// Je vérifie si le pixel est déjà transparent, en testant j'ai vu qu'ajouter de la transparence à un alpha 0 donne un pixel visible.
+            if(a != 0){ 
+				// Je crée une couleur en prenant la couleur d'origine et en y ajoutant la nouvelle transparence.
+				java.awt.Color transparent = new java.awt.Color(r ,gr ,b, alpha); 
             }else{
-            	java.awt.Color transparent = new java.awt.Color(r ,gr ,b, a); // Je garde la couleur et la transparence d'origine.
+				// Je garde la couleur et la transparence d'origine.
+            	java.awt.Color transparent = new java.awt.Color(r ,gr ,b, a); 
             }
-            image.setRGB(x,y, (transparent.getRGB())); // J'applique la nouvelle couleur au pixel.
+			
+			// J'applique la nouvelle couleur au pixel.
+            image.setRGB(x,y, (transparent.getRGB())); 
         }
 	}
     return image;
