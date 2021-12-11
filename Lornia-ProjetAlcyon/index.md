@@ -9,14 +9,14 @@
 ![CodeWars](https://www.codewars.com/users/Evury/badges/small)
 
 
-**Presentation**
+### **Presentation**
 
 *Lornia : Projet Alcyon* est une jeu privé multi-joueur qui intègre des gameplay qui me plaisent : construction, farming, survie.
 
 *Alcyon* est un prototype de gameplay de combat innovant que je vais mettre en place dans Lornia.
 
 
-**DevBlogs**
+### **DevBlogs**
 
 | Devblog | Contenu | Date |
 | :------ | :------ | :--- |

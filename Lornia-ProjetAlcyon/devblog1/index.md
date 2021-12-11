@@ -10,7 +10,7 @@
 ![CodeWars](https://www.codewars.com/users/Evury/badges/small)
 
 
-__**============ Devblog #1 ============**__
+## **============ Devblog #1 ============**
 
 *11/12/2021*
 
@@ -22,19 +22,19 @@ Bon, pour le premier il n'y aura peu voir pas d'image à montrer car c'est surto
 Mon objectif pour la première étape était de créer un écran de titre avec la possibilité d'entrer des informations afin de se connecter au serveur.
 
 
-__**Choix du langage**__
+### **Choix du langage**
 
 C'est très simple, j'ai choisi d'utiliser Java car c'est mon langage de prédilection et que je fais ce projet from scratch.
 
 
-__**Création du serveur**__
+### **Création du serveur**
 
 Je commence par la couche la plus basse (la plus éloignée de l'utilisateur) qui est le serveur. Je n'utilise pas de serveur pré-fait afin de garder un maximum de contrôle dessus. Le serveur consiste à attendre et échanger des messages avec les clients. Le serveur est actuellement capable d'attendre les connexions client, de donner l'état du serveur (en ligne, en maintenance et hors ligne le cas échéant), de donner le nombre maximum de joueur pouvant se connecter et le nombre de joueur connecté.
 
 Associé au serveur il y a la base de données qui ne contient qu'une seule table actuellement. La table *compte* qui contient les informations d'un compte.
 
 
-__**Choix des librairies**__
+### **Choix des librairies**
 
 Pour la création du jeu il me fallait un minimum de librairies. Je veux utiliser le moins d'outil possible pour devoir coder moi même le jeu et me challenger donc je n'utiliserai pas Unity, Unreal engine ou autre.
 
@@ -45,7 +45,7 @@ J'utilisais GTGE dans le passé mais il commence à être trop vieux pour les no
 Par contre gros problème avec LitiEngine, la structure est différente de ce que j'ai l'habitude d'utiliser pour créer un jeu, elle est très très récente, la documentation n'est pas complète et il y a peu d'exemple. Ça ne m'a pas empêché d'insister et de surmonter les obstacles liés à l'utilisation.
 
 
-__**Création du client**__
+### **Création du client**
 
 La création du client s'est fait en plusieurs étapes afin d'avoir un écran titre.
 - Background
@@ -70,17 +70,17 @@ La police est récupérée au pif sur le net, elle me plaisait bien.
 J'ai découvert Aseprite qui permet de faire des assets 2D en pixelart, je me suis fait la main dessus en faisant une petite animation de chargement lors de la communication avec le serveur.
 
 
-__**Documentation**__
+### **Documentation**
 
 Une fois que j'avais cette fenêtre complètement fonctionnelle je suis passé en mode nettoyage de code et documentation. C'est la partie longue et peu intéressante qui consiste à rendre mon code propre et lisible, d'optimiser au maximum, générer la JavaDoc.
 
-__**Ajouts**__
+### **Ajouts**
 
 
 A ce moment du développement ma première étape était terminée mais j'ai décidé d'ajouter quelques assets pour habiller l'écran et surtout tester. J'ai donc ajouté une musique qui se lance en boucle à cet écran et une animation de "light" qui apparaissent en bas de l'écran et remonte jusqu'en haut en boucle.
 
 
-__**Conclusion**__
+### **Conclusion**
 
 En conclusion, pour le peu qui est réalisé j'ai passé beaucoup beaucoup de temps mais le temps passé dessus est réutilisable pour la suite donc je ne m'inquiète pas. Et surtout je vais pouvoir passer à des choses plus intéressantes comme la création de la physique du jeu et l'affichage de la map.
 
