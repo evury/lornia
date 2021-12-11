@@ -9,6 +9,7 @@
 
 ### Lornia est un serveur Minecraft 1.17
 
+<br/>
 Serveur survie avec quelques plugins :
 * Claim
 * Hôtel des ventes
