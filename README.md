@@ -1,2 +1,0 @@
-# lornia
-test du theme
