@@ -15,12 +15,16 @@ Serveur survie avec quelques plugins :
 * Magie
 * Items custom
 * Mob Arena
+
 <br/>
 Des mini-jeux sont ajoutés de temps en temps :
 * Murder
+
 <br/>
 Discord : [discord.gg/ttuWy72](discord.gg/ttuWy72)
-<br/> Adresse du serveur : 
+
+<br/>
+Adresse du serveur : 
 ```txt
 play.lornia.fr
 ```
